@@ -51,4 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
   
+
+thankYou.style.opacity = 0;
+thankYou.style.display = 'block';
+setTimeout(() => { thankYou.style.opacity = 1; }, 50);
+
   
