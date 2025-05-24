@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARBAAZ | Singer Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+
+<body>
+  <nav>
+    <h1 class="logo">🎙 Arbaaz</h1>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#music">Tracks</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+<section id="home" class="page">
+  <div class="home-container">
+    <div class="hero">
+      <h2>Hey there! I'm <span>ARBAAZ HOSSAIN</span></h2>
+      <p>Where melodies meet soul <i class="fa-solid fa-music"></i></p>
+      <a href="#music" class="glow-btn">Listen Now</a>
+    </div>
+    <div class="image">
+      <img src="assets/images/port-main.jpg" alt="Arbaaz Hossain" />
+    </div>
+  </div>
+</section>
+
+
+  <section id="about" class="page">
+    <div class="about-container">
+      <div class="image" id="about-img">
+        <img src="assets/images/about-img.jpg" alt="Arbaaz Hossain" />
+      </div>
+      <div class="hero">
+        <h2 class="glow-text">Meet the Artist</h2>
+        <p>I'm <strong>Rooh</strong>, stage name of <strong>Arbaaz Hossain</strong>, a soulful male vocalist blending classical notes with modern beats. My journey began with open mics and now spans international concerts, powerful vocals, and emotional resonance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="music" class="page">
+    <h2 class="glow-text">Latest Tracks</h2>
+    <div class="music-player">
+      <div class="track">
+        <h4><i class="fas fa-music"></i> Echoes of Silence</h4>
+        <audio controls>
+          <source src="assets/music/echoes.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="track">
+        <h4><i class="fas fa-music"></i> Soul Journey</h4>
+        <audio controls>
+          <source src="assets/music/tujhbinjane_arbu.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="page">
+    <h2 class="glow-text">On Stage</h2>
+    <div class="gallery">
+      <img src="assets/images/stage1.jpg" alt="Live concert 1">
+      <img src="assets/images/stage2.jpg" alt="Live concert 2">
+      <img src="assets/images/stage3.jpg" alt="Live concert 3">
+    </div>
+  </section>
+
+  <section id="contact" class="page">
+    <h2 class="glow-text">Get in Touch</h2>
+    <form id="contactForm" action="https://formspree.io/f/manogyrw" method="POST">
+      <input type="text"  name="name"  placeholder="Your Name"   required />
+      <input type="email" name="email" placeholder="Your Email"  required />
+      <textarea name="message" rows="5" placeholder="Drop a message…" required></textarea>
+
+      <button type="submit" class="glow-btn2">
+        Send <i class="fas fa-paper-plane"></i>
+      </button>
+    </form>
+
+<!-- hidden thank-you text -->
+<p id="thankYouMessage">
+  Thank you for your message!
+</p>
+
+
+    <div class="social-links">
+      <h3 class="glow-text">Social handles</h3>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/arbu_sings" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://spotify.com" target="_blank"><i class="fab fa-spotify"></i></a>
+        <a href="https://www.facebook.com/Àrbààz HúSsáin" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.youtube.com/@arbuvlogs66" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Rooh (Arbaaz Hossain). Feel the vibe, live the music🎙</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ─── ① Fade-in sections (unchanged) ───────────────────────── */
+  const sections = document.querySelectorAll('.page');
+  const observer = new IntersectionObserver(
+    entries => entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    }),
+    { threshold: 0.3 }
+  );
+  sections.forEach(sec => observer.observe(sec));
+
+  /* ─── ② Scroll-spy nav highlight (unchanged) ───────────────── */
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (pageYOffset >= sec.offsetTop - 120) current = sec.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === `#${current}`);
+    });
+  });
+
+  /* ─── ③ Ajax form submit to Formspree (NEW endpoint) ───────── */
+  const form     = document.getElementById('contactForm');
+  const thankYou = document.getElementById('thankYouMessage');
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();                                // stop default post
+
+    const data = new FormData(form);                   // gather fields
+    data.delete('upload');                             // remove file if on free plan
+
+    try {
+      const res = await fetch('https://formspree.io/f/manogyrw', {
+        method: 'POST',
+        body:   data,
+        headers:{ Accept: 'application/json' }
+      });
+
+      if (res.ok) {
+        form.reset();
+        form.style.display = 'none';
+        thankYou.style.display = 'block';
+      } else {
+        alert('Sorry, something went wrong. Please try again later.');
+      }
+    } catch (err) {
+      alert('Network error. Please try again later.');
+      console.error(err);
+    }
+  });
+
+});
+</script>
+</html>
