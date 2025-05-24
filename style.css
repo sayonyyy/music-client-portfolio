@@ -7,7 +7,7 @@
   --primary-neon-dim: #00bfa5;
   --accent-pink: #ff6ec4;
   --accent-purple: #654ea3;
-  --bg-dark: #0d0d0d76;
+  --bg-dark: #0d0d0d;
   --bg-deep: #121212;
   --text-light: #f8f8f8;
 }
@@ -71,11 +71,9 @@ nav {
   list-style: none;
   display: none;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
-}
-
-.nav-links.show {
-  display: block; /* shown when toggled */
 }
 
 .nav-links a {
@@ -131,6 +129,7 @@ nav {
 img {
   max-width: 100%;
   height: auto;
+  display: block;
   border-radius: 12px;
 }
 
@@ -370,6 +369,7 @@ img {
   gap: 3rem;
   width: 100%;
   max-width: 1000px;
+  overflow-x: hidden;
 }
 
 .gallery img {
@@ -482,17 +482,47 @@ footer {
    =============================== */
 @media (max-width: 767px) {
   nav {
+    position: fixed;
+    top: 0;
+    font-size: smaller;
     flex-direction: column;
     align-items: flex-start;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+  }
+
+  .logo {
+    font-size: 1.3rem;
   }
 
   .nav-links {
     gap: 1rem;
     width: 100%;
     display: flex;
-    justify-content: center;
-    margin-top: 1rem;
+    justify-content: left;
+    margin-top: 0.6rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero h2 span{
+    font-size: 2rem;
+  }
+
+  .hero p{
+    font-size: 0.9rem;
+  }
+
+  .image img {
+    width: 100%;
+    height: 350px;
+  }
+
+  #about-img img{
+    width: 100%;
+    height: 320px;
   }
 
   .home-container,
@@ -504,12 +534,12 @@ footer {
   }
 
   .glow-btn {
-  margin-left: 30%;
-  overflow: hidden;
-  border: none;
-  padding: .5rem 1.6rem;
-  border-radius: 35px;
-}
+    margin-left: 30%;
+    overflow: hidden;
+    border: none;
+    padding: .5rem 1.6rem;
+    border-radius: 35px;
+  }
 
   .home-container .image,
   .about-container .image {
@@ -528,7 +558,8 @@ footer {
   }
 
   .gallery img {
-    width: 90%;
+    width: 50%;
+    height: 300px;
     margin-bottom: 1rem;
   }
 
