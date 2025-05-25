@@ -197,10 +197,10 @@ img {
   font-size: 3.5rem;
   font-weight: 700;
   display: inline-block;
-  background: linear-gradient(to bottom, #19ccb7, #bb48e1);
+  background: linear-gradient(to bottom, #7fdbd0, #ac70ed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2px #c4b4b4; 
+  -webkit-text-stroke: 2px #1c1a1a; 
 }
 
 .hero p {
