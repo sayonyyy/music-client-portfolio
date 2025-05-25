@@ -109,7 +109,7 @@ nav {
   padding: 2rem;
 }
 
-.hero {
+.hero, .hero-about {
   flex: 1 1 40%;
   max-width: 500px;
   text-align: left;
@@ -197,10 +197,10 @@ img {
   font-size: 3.5rem;
   font-weight: 700;
   display: inline-block;
-  background: linear-gradient(45deg, #00ffe1, #ff6ec4);
+  background: linear-gradient(to bottom, #19ccb7, #bb48e1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2px #090707; 
+  -webkit-text-stroke: 2px #c4b4b4; 
 }
 
 .hero p {
