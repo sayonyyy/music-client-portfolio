@@ -285,7 +285,7 @@ img {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px #06080e; 
-  text-shadow: 0 8px 40px #000000a5;
+  text-shadow: 0 8px 40px #000000;
 }
 
 .page p {
@@ -466,7 +466,7 @@ footer {
 
   .glow-text {
     -webkit-text-stroke: 1.5px #c3baba; 
-    text-shadow: 0 10px 30px black;
+  text-shadow: 0 8px 30px #0000009d;
   }
 
   .nav-links {
