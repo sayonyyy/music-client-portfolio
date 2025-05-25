@@ -3,7 +3,7 @@
    =============================== */
 :root {
   color-scheme: only light;
-  background-color: white;
+  --background-color: #ffffff;
   --primary-neon: #00ffe1;
   --primary-neon-dim: #00bfa5;
   --accent-pink: #ff6ec4;
@@ -23,17 +23,18 @@
 }
 
 html {
+  color-scheme: light;
   scroll-behavior: smooth;
 }
 
 body {
   font-family: "Poppins", "Segoe UI", sans-serif;
-  color: var(--text-light);
-  background-color: #fff;
+  color: white;
+  background-color: #ffffff;
   /* subtle star‑field pattern */
   background-image:
-    radial-gradient(var(--accent-purple) 1px, transparent 1px),
-    radial-gradient(var(--accent-pink) 1px, transparent 1px);
+    radial-gradient(#654ea3 1px, transparent 1px),
+    radial-gradient(#ff6ec4 1px, transparent 1px);
   background-size: cover;
   background-repeat: no-repeat;
   overflow-x: hidden;
@@ -53,16 +54,14 @@ nav {
   align-items: center;
   padding: 1rem 2.5rem;
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  background: rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid var(--glass);
+  background: #00000080;
   z-index: 1000;
 }
 
 .logo {
   font-size: 2rem;
   font-weight: 900;
-  background: linear-gradient(45deg, var(--primary-neon), var(--accent-pink));
+  background: linear-gradient(45deg, #00ffe1, #ff6ec4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: hue 8s linear infinite;
@@ -97,7 +96,7 @@ nav {
   bottom: -4px;
   width: 100%;
   height: 2px;
-  background: var(--primary-neon);
+  background: #00ffe1;
   transform: scaleX(0);
   transform-origin: right;
   transition: transform .3s ease;
@@ -105,7 +104,7 @@ nav {
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--primary-neon);
+  color: #00ffe1;
 }
 
 .nav-links a:hover::after,
@@ -147,7 +146,7 @@ img {
   height: 480px;
   object-fit: cover;
   border-radius: 1rem;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 20px #000000b1;
 }
 
 #about-img img {
@@ -177,23 +176,23 @@ img {
 
 /* --- Individual backgrounds with overlay gradient --- */
 #home {
-  background: linear-gradient(135deg, rgba(31, 64, 55, 0.9), rgba(153, 242, 200, 0.8)), url("assets/images/bg-home.jpg") center/cover fixed;
+  background: linear-gradient(135deg, #1f4037e6, #99f2c8cc), url("assets/images/bg-home.jpg") center/cover fixed;
 }
 
 #about {
-  background: linear-gradient(135deg, rgba(22, 34, 42, 0.9), rgba(58, 96, 115, 0.8)), url("assets/images/bg-about.jpg") center/cover fixed;
+  background: linear-gradient(135deg, #16222ae6, #3a6073cc), url("assets/images/bg-about.jpg") center/cover fixed;
 }
 
 #music {
-  background: linear-gradient(135deg, rgba(101, 78, 163, 0.9), rgba(234, 175, 200, 0.8)), url("assets/images/bg-music.jpg") center/cover fixed;
+  background: linear-gradient(135deg, #654ea3e6, #eaafc8cc), url("assets/images/bg-music.jpg") center/cover fixed;
 }
 
 #gallery {
-  background: linear-gradient(135deg, rgba(15, 32, 39, 0.9), rgba(44, 83, 100, 0.8)), url("assets/images/bg-gallery.jpg") center/cover fixed;
+  background: linear-gradient(135deg, #0f2027e6, #2c5364cc), url("assets/images/bg-gallery.jpg") center/cover fixed;
 }
 
 #contact {
-  background: linear-gradient(135deg, rgba(29, 67, 80, 0.9), rgba(164, 57, 49, 0.8)), url("assets/images/bg-contact.jpg") center/cover fixed;
+  background: linear-gradient(135deg, #1d4350e6, #a43931cc), url("assets/images/bg-contact.jpg") center/cover fixed;
 }
 
 /* ===============================
@@ -204,14 +203,14 @@ img {
   font-size: 3rem;
   line-height: 1.5;
   text-align: center;
-  color: var(--text-light);
+  color: #f8f8f8;
   text-shadow: 0 5px 25px rgba(0, 0, 0, .5);
 }
 
 .hero h2 span {
   font-size: 3.5rem;
   display: inline-block;
-  background: linear-gradient(45deg, var(--primary-neon), var(--accent-pink));
+  background: linear-gradient(45deg, #00ffe1, #ff6ec4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1.5px #090707; 
@@ -236,11 +235,11 @@ img {
   border-radius: 35px;
   font-weight: 700;
   letter-spacing: .5px;
-  background: var(--primary-neon);
+  background: #00ffe1;
   color: #000;
   cursor: pointer;
   transition: transform .25s ease;
-  box-shadow: 0 0 12px var(--primary-neon);
+  box-shadow: 0 0 12px #00ffe1;
   z-index: 1;
 }
 
@@ -252,11 +251,11 @@ img {
   border-radius: 35px;
   font-weight: 700;
   letter-spacing: .5px;
-  background: var(--primary-neon);
+  background: #00ffe1;
   color: #000;
   cursor: pointer;
   transition: transform .25s ease;
-  box-shadow: 0 0 8px var(--primary-neon);
+  box-shadow: 0 0 8px #00ffe1;
   z-index: 1;
 }
 
@@ -269,24 +268,9 @@ img {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at center, rgba(98, 181, 167, 0.405) 0%, rgba(255, 255, 255, 0) 60%);
+  background: radial-gradient(circle at center, #62b5a767 0%, #ffffff00 60%);
   transform: rotate(45deg) translate(0, 0);
   animation: shine1 4s linear infinite;
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* Second shine */
-.glow-btn::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, rgba(90, 128, 168, 0.608) 0%, rgba(255, 255, 255, 0) 60%);
-  transform: rotate(-45deg) translate(0, 0);
-  animation: shine2 7s linear infinite;
   pointer-events: none;
   z-index: -1;
 }
@@ -296,14 +280,9 @@ img {
   100% { transform: rotate(45deg) translate(100%, 100%); }
 }
 
-@keyframes shine2 {
-  0% { transform: rotate(-45deg) translate(100%, 100%); }
-  100% { transform: rotate(-45deg) translate(-100%, -100%); }
-}
-
 /* Button hover effect */
-.glow-btn:hover, .glow-btn2:hover {
-  box-shadow: 0 0 5px rgb(8, 49, 132), 0 0 30px rgb(52, 110, 155);
+.glow-btn:hover{
+  box-shadow: 0 0 5px #083184, 0 0 30px #346e9b;
 }
 
 /* ===============================
@@ -314,11 +293,11 @@ img {
   text-align: center;
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
-  background: linear-gradient(45deg, var(--accent-pink), var(--primary-neon));
+  background: linear-gradient(45deg, #ff6ec4, #00ffe1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1.5px #01185c; 
-  text-shadow: 0 8px 22px rgba(0, 0, 0, .55);
+  text-shadow: 0 8px 22px #0000008c;
 }
 
 .page p {
@@ -341,11 +320,10 @@ img {
 }
 
 .track {
-  background: var(--glass);
   backdrop-filter: blur(10px);
   padding: 1.2rem 1.5rem;
   border-radius: 18px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, .4);
+  box-shadow: 0 6px 18px #00000066;
 }
 
 .track h4 {
@@ -357,7 +335,7 @@ img {
 }
 
 .track i {
-  color: var(--primary-neon);
+  color: #00ffe1;
 }
 
 .track audio {
@@ -382,13 +360,13 @@ img {
   height: 400px;
   object-fit: cover;
   border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 15px #00000066;
   transition: transform .4s ease, box-shadow .4s ease;
 }
 
 .gallery img:hover {
   transform: scale(1.05) translateY(-6px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 25px #00000099;
 }
 
 /* ===============================
@@ -400,11 +378,10 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  background: var(--glass);
   backdrop-filter: blur(12px);
   padding: 2rem;
   border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, .45);
+  box-shadow: 0 8px 25px #00000073;
 }
 
 form input,
@@ -413,21 +390,21 @@ form textarea {
   padding: 1rem 1.2rem;
   border-radius: 12px;
   border: 2px solid transparent;
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--text-light);
+  background: #ffffff0f;
+  color: #f8f8f8;
   font-size: 1rem;
   transition: border .3s ease;
 }
 
 form input:focus,
 form textarea:focus {
-  border-color: var(--primary-neon);
+  border-color: #00ffe1;
   outline: none;
 }
 
 form label {
   font-size: .95rem;
-  opacity: .8;
+  opacity: 2;
 }
 
 .social-links {
@@ -450,7 +427,7 @@ form label {
 
 .social-icons a:hover {
   transform: scale(1.3);
-  color: var(--primary-neon);
+  color: #00ffe1;
 }
 
 #thankYouMessage {
@@ -460,7 +437,7 @@ form label {
   color: #09423a;
   margin-top: 1rem;
   transition: opacity 0.5s ease;
-  text-shadow: 0 5px 25px rgba(78, 183, 146, 0.837);
+  text-shadow: 0 5px 25px #4eb792d5;
   -webkit-text-stroke: 1px #eae5e5;
 }
 
@@ -470,8 +447,7 @@ form label {
 footer {
   text-align: center;
   padding: 2rem 0;
-  background: var(--bg-deep);
-  border-top: 1px solid var(--glass);
+  background: #121212;
   font-size: 0.9rem;
   color: #aaa;
 }
