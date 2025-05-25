@@ -285,7 +285,7 @@ img {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px #06080e; 
-  text-shadow: 0 8px 40px #000000;
+  text-shadow: 0 8px 20px #000000;
 }
 
 .page p {
