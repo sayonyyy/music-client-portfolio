@@ -276,7 +276,7 @@ img {
    Section Headings & Paragraphs
    =============================== */
 .glow-text {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 1.5rem;
@@ -465,7 +465,8 @@ footer {
   }
 
   .glow-text {
-    -webkit-text-stroke: 1.5px #ffffff; 
+    -webkit-text-stroke: 1.5px #c3baba; 
+    text-shadow: 0 10px 10px #000000;
   }
 
   .nav-links {
